@@ -24,8 +24,13 @@ loop repeatedly alter the number that the variable
 refers to.
 
 """
+def factorial(num):
+    if num == 0:
+        return 1
+    return num * factorial(num-1)
 
 def main():
-    return
+    num = int(input("Enter a number to find the factorial of: "))
+    print(f"the factorial of {num} is {factorial(num)}")
     
 main()
