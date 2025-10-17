@@ -13,3 +13,14 @@ The program will ask for the password three times if necessary.
 After that, it exits.
 
 """
+PASSWORD ="#M9078q"
+GREETING = "Greetings Professor Falcon"
+DENIED_MESSAGE = "Access denied"
+
+for _ in range(3):
+    user_entered_pwd = input("enter your password: ")
+    if user_entered_pwd == PASSWORD:
+        print(GREETING)
+        break
+    else:
+        print(DENIED_MESSAGE)
