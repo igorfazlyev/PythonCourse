@@ -22,3 +22,15 @@ both smoke and also have pets.
 
 
 """
+student = input("Are you a student? y/n: ").lower() == 'y' 
+pets = input("Do you have pets? y/n: ").lower() == 'y'
+smoke = input("Do you smoke? y/n: ").lower() == 'y' 
+
+YES_MESSAGE = "Property available"
+NO_MESSAGE = "Property unavailable"
+
+available = (student and not pets and not smoke) or (not student and not (pets and smoke ))
+if available:
+    print(YES_MESSAGE)
+else:
+    print(NO_MESSAGE)
