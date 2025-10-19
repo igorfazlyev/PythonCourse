@@ -32,7 +32,9 @@ Until you quit with option 5, the program displays the menu again after every ac
 
 """
 def main():
-    pass
+    db = Database(["orange", "banana", "blackberry"])
+    db.run_database()
+
 class Database:
     def __init__(self,list_of_strings):
         self.data = list_of_strings
@@ -55,14 +57,28 @@ class Database:
         new_value = input("enter the new value for the item: ")
         self.data[target_index] = new_value
     def run_database(self):
-        app_is_running = True
-        menu = {
-            "Display database": lambda: self.display_data(),
-            "Add an item": lambda: self.add_item(),
-            "Delete an item": lambda: self.delete_item(),
-            "Change an item": lambda: self.change_item(),
-            "Quit": lambda: app_is_running = False,
-        }
-        while app_is_runnin:
-            
+        options = [
+            "Display database",
+            "Add an item",
+            "Delete an item",
+            "Change an item",
+            "Quit",
+        ]
+        while True:
+            print("Available Actions:")
+            for index, option in enumerate(options):
+                print(f"{index + 1}: {option}")
+            user_selection = int(input("select an option: "))
+            if user_selection == 1:
+                self.display_data()
+            elif user_selection == 2:
+                self.add_item()
+            elif user_selection ==3:
+                self.delete_item()
+            elif user_selection == 4:
+                self.change_item()
+            else:
+                print("good bye")
+                return
+
 main()
