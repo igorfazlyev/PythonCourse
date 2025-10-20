@@ -9,6 +9,10 @@ Which cubic numbers are not square numbers?
 """
 
 def main():
-    pass
-    
+    cubes = {x * x * x for x in range(1, 10)}
+    print(sorted(list(cubes)))
+    squares = {x * x for x in range(1, 28)}
+    print(sorted(list(squares)))
+    print("cubes that are also squares: ", cubes.intersection(squares))
+    print("cubes that are not squares: ", cubes.difference(squares))
 main()
