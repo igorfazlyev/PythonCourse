@@ -8,6 +8,7 @@ skills = ["coding", "art", "testing", "management", "marketing"]
 
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 
+people_and_skills = {person: set(random.sample(skills, 2)) for person in people}
 
 """
 1. Randomly assign two skills to each person. Store this information in a suitable data structure
@@ -21,7 +22,23 @@ The people should be chosen for each day in the order they are found in the peop
 # Choosing a random element from a set
 # Modular counting
 
+
 def main():
-    pass
+    index = 0
+    for day in days*4:
+        print(day, end=": ")
+        skills_to_print=set()
+        for i in range(4):
+            person_to_print= people[index]
+            skills_to_print.update(people_and_skills[person_to_print])
+            print(person_to_print, end=" ")
+            index += 1
+            if index > len(people) - 1:
+                index = 0
+        print("combined sills: ", end=" - ")
+        for skill in sorted(list(skills_to_print)):
+            print(skill, end=" ")
+        print()
+    
 
 main()
