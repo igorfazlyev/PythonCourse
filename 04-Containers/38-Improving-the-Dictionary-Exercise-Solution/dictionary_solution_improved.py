@@ -14,24 +14,21 @@ Start by putting the names and ages in a dictionary.
 """
 
 def create_lookup(people, ages):
-    lookup = dict()
+    return {name.casefold(): age for name, age in dict(zip(people,ages)).items()}
 
-    for name, age in zip(people, ages):
-        lookup[name.casefold()] = age
-    
-    return lookup
 
 def user_loop(lookup):
 
     while True:
         user_input = input("Enter a name, or 'quit' > ")
 
-        if user_input == "quit":
+        if user_input.casefold() == "quit" or user_input.casefold()=='q':
             break
         
         age = lookup.get(user_input.casefold())
 
         if age is None:
+            print("no such person")
             continue
 
         print(user_input + " is " + str(age) + " years old")
