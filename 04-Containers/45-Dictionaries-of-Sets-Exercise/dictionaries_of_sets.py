@@ -29,10 +29,17 @@ Write a function that can determine whether a particular book is present in the 
 """
 
 def add_book(library, category, title):
-    if not category in library:
+    if category not in library:
         library[category] = set()
 
     library[category].add(title)
+
+def print_library(library):
+    for category, books in library.items():
+        print(f"{category.upper()}:")
+        for book in sorted(list(books)):
+            print(book)
+        print("------------------")
 
 def main():
 
@@ -40,6 +47,8 @@ def main():
         "Science Fiction": {"Journey to the Centre of the Earth", "Day of the Triffids"},
         "Drama": {"A Tale of Two Cities", "Moby Dick"},
     }
-
+    add_book(library, 'Science Fiction', 'The War of the Worlds')
+    add_book(library, 'Adult', 'Topping from Below')
+    print_library(library)
 
 main()
