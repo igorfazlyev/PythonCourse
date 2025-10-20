@@ -41,6 +41,12 @@ def print_library(library):
             print(book)
         print("------------------")
 
+def book_exists(library, book):
+    for cat, books in library.items():
+        if book in books:
+            return f"{book} is in category {cat}"
+    return f"We don't have {book} in our library"
+
 def main():
 
     library = {
@@ -50,5 +56,7 @@ def main():
     add_book(library, 'Science Fiction', 'The War of the Worlds')
     add_book(library, 'Adult', 'Topping from Below')
     print_library(library)
-
+    print()
+    print(book_exists(library, "A Tale of Two Cities"))
+    print(book_exists(library, "Generation P"))
 main()
