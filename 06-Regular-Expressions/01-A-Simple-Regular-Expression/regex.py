@@ -7,6 +7,6 @@ def main():
 
     result = re.match("d.g", text)
 
-    print(result is not None)
+    print(result)
     
 main()
