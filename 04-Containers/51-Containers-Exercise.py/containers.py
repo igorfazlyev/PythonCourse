@@ -28,13 +28,13 @@ def main():
     for day in days*4:
         print(day, end=": ")
         skills_to_print=set()
-        for i in range(4):
+        for i in range(3):
             person_to_print= people[index % len(people)]
             skills_to_print.update(people_and_skills[person_to_print])
             print(person_to_print, end=" ")
             index += 1
-        print("combined sills: ", end=" - ")
-        for skill in sorted(list(skills_to_print)):
+        print("combined skills: ", end=" - ")
+        for skill in sorted(skills_to_print):
             print(skill, end=" ")
         print()
     
