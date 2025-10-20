@@ -2,7 +2,7 @@
 
 def main():
    
-   value = 7
+   value = 2
 
    text = "Condition is true" if value < 3 else "Condition is false"
 
